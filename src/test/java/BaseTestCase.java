@@ -1,4 +1,5 @@
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -31,5 +32,9 @@ public abstract class BaseTestCase {
     @After
     public void tearDown() throws Exception {
         driver.quit();
+    }
+
+    public void loginSuccess() throws Exception {
+        Assert.assertFalse(driver.getTitle().contains("Danh sách vận đơn"));
     }
 }
